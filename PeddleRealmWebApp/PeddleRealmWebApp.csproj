@@ -205,6 +205,10 @@
     <Compile Include="Migrations\201811282023176_AddItemAndItemTypeTable.Designer.cs">
       <DependentUpon>201811282023176_AddItemAndItemTypeTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811282026180_PopulateItemTypes.cs" />
+    <Compile Include="Migrations\201811282026180_PopulateItemTypes.Designer.cs">
+      <DependentUpon>201811282026180_PopulateItemTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -295,6 +299,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201811282023176_AddItemAndItemTypeTable.resx">
       <DependentUpon>201811282023176_AddItemAndItemTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811282026180_PopulateItemTypes.resx">
+      <DependentUpon>201811282026180_PopulateItemTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
