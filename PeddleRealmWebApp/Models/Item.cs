@@ -19,5 +19,8 @@ namespace PeddleRealmWebApp.Models
         [Required]
         [StringLength(255)]
         public string Description { get; set; }
+
+        [Required]
+        public string ItemPhoto { get; set; }
     }
 }
