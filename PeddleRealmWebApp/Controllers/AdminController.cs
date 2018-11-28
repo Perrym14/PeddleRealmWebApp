@@ -9,6 +9,11 @@ namespace PeddleRealmWebApp.Controllers
     {
         private ApplicationDbContext _context;
 
+        public AdminController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
         // GET: Admin
         public ActionResult Index()
         {
