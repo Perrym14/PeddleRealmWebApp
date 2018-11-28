@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace PeddleRealmWebApp.Models
+namespace PeddleRealmWebApp.ViewModels
 {
     public class ExternalLoginConfirmationViewModel
     {
@@ -49,9 +49,8 @@ namespace PeddleRealmWebApp.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +63,10 @@ namespace PeddleRealmWebApp.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [StringLength(255)]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
