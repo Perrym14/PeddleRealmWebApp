@@ -30,7 +30,7 @@ namespace PeddleRealmWebApp
 
                 //Create default Admin user
 
-                var user = new ApplicationUser { UserName = "Mark Tang", Email = "MarkT@domain.com" };
+                var user = new ApplicationUser { UserName = "MarkT", Email = "MarkT@domain.com" };
                 string userPWD = "Tang@2014";
 
                 var createUser = userManager.Create(user, userPWD);
