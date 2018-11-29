@@ -5,28 +5,33 @@
 
 <h2>Create new item for sell.</h2>
 
-<form>
+@using (Html.BeginForm("Create", "Admin", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
     <div class="form-group">
-        <label for="@Model.Name">Item Name</label>
-        <input type="text" class="form-control" id="itemName" placeholder="Mark Tang">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new {@class= "form-control", placeholder="Mark Tang"})
     </div>
     <div class="form-group">
-        <label for="@Model.Price">Item Price</label>
-        <input type="text" class="form-control" id="itemPrice" placeholder="Mark Tang">
+        @Html.LabelFor(m => m.Price)
+        @Html.TextBoxFor(m => m.Price, new {@class = "form-control"})
+        
     </div>
     <div class="form-group">
-        <label for="@Model.ItemType">Item Type</label>
-        @Html.DropDownListFor(m => m.ItemType, new SelectList(Model.ItemTypes, "Id", "Name"), "", new{@class = "form-control"})
+        @Html.LabelFor(m => m.ItemType)
+        @Html.DropDownListFor(m => m.ItemType, new SelectList(Model.ItemTypes, "Id", "Name"), "", new {@class = "form-control"})
     </div>
 
     <div class="form-group">
-        <label for="@Model.Description">Item Description</label>
-        <textarea class="form-control" id="itemDescription" rows="3"></textarea>
+       @Html.LabelFor(m=> m.Description)
+        @Html.TextAreaFor(m => m.Description, new {@class="form-control"})
     </div>
-    
+
     <div class="form-group">
-        <label for="@Model.ItemPhoto">Upload Item Photo Image.</label>
-        <input type="file" class="form-control-file" id="itemPhoto">
+        @Html.LabelFor(m => m.ItemPhoto)
+        <input type="file" name="uploadedFile" class="form-control-file" id="itemPhoto">
     </div>
-</form>
+    <button type="submit" class="btn btn-info">Save</button>
+    <button type="button" class="btn btn-link">Cancel</button>
+}
 
