@@ -20,8 +20,8 @@ namespace PeddleRealmWebApp.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-
-            return View();
+            var itemsForSale = _context.Items;
+            return View(itemsForSale);
         }
 
         public ActionResult Create()
@@ -67,18 +67,18 @@ namespace PeddleRealmWebApp.Controllers
                 var fileName = Path.GetFileName(file.FileName);
                 var random = Guid.NewGuid() + fileName;
                 var path = Path.Combine(
-                    System.Web.HttpContext.Current.Server.MapPath("~/App_Data/Images"), random);
+                    System.Web.HttpContext.Current.Server.MapPath("~/Content/Images/UserPhotos"), random);
 
-                if (!Directory.Exists(System.Web.HttpContext.Current.Server.MapPath("~/App_Data/Images")))
+                if (!Directory.Exists(System.Web.HttpContext.Current.Server.MapPath("~/Content/UserPhotos")))
                 {
                     Directory.CreateDirectory(
-                        System.Web.HttpContext.Current.Server.MapPath("~/App_Data/Images/UserPhotos"));
+                        System.Web.HttpContext.Current.Server.MapPath("~/Content/Images/UserPhotos"));
                 }
                 file.SaveAs(path);
 
 
                 //var awsS3Uploader = new AmazonS3Uploader(random, path);
-                // awsS3Uploader.UploadFile();
+                // awsS3Uploader.UploadFile(); - Causes null exception.
                 return random;
             }
 

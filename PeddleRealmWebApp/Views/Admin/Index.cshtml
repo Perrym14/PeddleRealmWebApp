@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<PeddleRealmWebApp.Models.Item>
 @{
     ViewBag.Title = "Index";
 }
@@ -6,4 +6,22 @@
 <h2>Welcome Admin.</h2>
 
 @Html.ActionLink("Add new item for sale.", "Create")
+
+<div class="container">
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="itemName"> @item.Name </div>
+                <div class="itemPrice">@item.Price</div>
+                <div class="itemDescription">@item.Description</div>
+                <div class="itemPhoto">
+                    <img src="/Content/Images/UserPhotos/@item.ItemPhoto" class="img-thumbnail" alt=""/>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
 

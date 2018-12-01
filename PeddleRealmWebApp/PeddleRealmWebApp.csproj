@@ -230,10 +230,16 @@
     <Compile Include="ViewModels\ItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\UserPhotos\3389bf93-0aca-4b1c-bb63-69a44b03f7e0spaghetti.jpeg" />
+    <Content Include="Content\Images\UserPhotos\411409ed-6209-4278-9a34-977e8d5c20a4ShirtOfFortitude.jpg" />
+    <Content Include="Content\Images\UserPhotos\4814f5c8-c4e5-4f4f-9dee-fbaa4fe4c698ShirtOfFortitude.jpg" />
+    <Content Include="Content\Images\UserPhotos\8191fa1c-dda4-4518-811a-74d845a59e95HatOfUnmatchedSophistication.jpg" />
+    <Content Include="Content\Images\UserPhotos\fe6bbc1f-abea-4798-ac30-f80349e223af151010_Sapporo_ramen_at_Susukino_Sapporo_Hokkaido_Japan01s.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\UnchartedBG.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -261,7 +267,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -292,7 +300,7 @@
     <Content Include="Views\Admin\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\Images\UserPhotos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
