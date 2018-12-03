@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Index";
 }
+<meta content="width-device-width, initial-scale=1"/>
 <header>
     <h2>Welcome Admin.</h2>
 
@@ -12,6 +13,7 @@
     <div class="row" id="itemRow">
         @foreach (var item in Model)
         {
+
             <column class="col-sm-3" id="itemContainer">
                 <img src="/Content/Images/UserPhotos/@item.ItemPhoto" class="img-thumbnail" alt="" id="itemPhotoDisplay"/>               
                 <a href="@Url.Action("Edit", "Admin", new {id = item.Id})" id="itemActions">

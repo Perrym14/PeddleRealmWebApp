@@ -1,6 +1,14 @@
-﻿body {
+﻿
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #363232;
+}
+*, :after, :before {
+
+    box-sizing: border-box;
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -32,7 +40,29 @@
     textarea {
         max-width: 280px;
     }
+
     /* Bootstrap overrides*/
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: -15px;
+    color: #c2f2f9;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+
+    color: #c2f2f9;
+
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    background-color: #262424;
+}
+.navbar-inverse {
+    background-color: #262424;
+    border-color: #363232;
+}
+.fa, .fas {
+    font-weight: 900;
+    color: #d7f2f9;
+}
 #itemContainer {
     border: 1px solid lightgray;
     -ms-border-radius: 15px;
