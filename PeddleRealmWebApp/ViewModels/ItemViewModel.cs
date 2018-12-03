@@ -24,5 +24,7 @@ namespace PeddleRealmWebApp.ViewModels
         [DataType(DataType.Upload)]
         public HttpPostedFileBase ItemPhoto { get; set; }
 
+        public string Heading { get; set; }
+
     }
 }

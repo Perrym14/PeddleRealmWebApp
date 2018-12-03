@@ -9,16 +9,51 @@
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.row,
+.row > .col-sm-4 {
+    padding: 8px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+
+    /* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+    .dl-horizontal dt {
+        white-space: normal;
+    }
+    /* Set width on the form input elements since they're 100% wide by default */
+    input,
+    select,
+    textarea {
+        max-width: 280px;
+    }
+    /* Bootstrap overrides*/
+#itemContainer {
+    border: 1px solid lightgray;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    background-color: aliceblue;
 }
+#itemContainer > #itemActions {
+    display: none
+}
+#itemContainer:hover #itemActions {
+    display: contents;
+}
+#itemContent {
+    background-color: mintcream;
+    border-radius: 5px;
+    width: 200px;
+    height: 200px;
+}
+
+#itemPhotoDisplay {
+    width: 100px;
+    height: 100px;
+    }
+    

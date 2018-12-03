@@ -2,26 +2,29 @@
 @{
     ViewBag.Title = "Index";
 }
+<header>
+    <h2>Welcome Admin.</h2>
 
-<h2>Welcome Admin.</h2>
+</header>
 
 @Html.ActionLink("Add new item for sale.", "Create")
 
-<div class="container">
-
-    <div class="row">
+    <div class="row" id="itemRow">
         @foreach (var item in Model)
         {
-            <div class="col-md-4">
-                <div class="itemName"> @item.Name </div>
-                <div class="itemPrice">@item.Price</div>
-                <div class="itemDescription">@item.Description</div>
-                <div class="itemPhoto">
-                    <img src="/Content/Images/UserPhotos/@item.ItemPhoto" class="img-thumbnail" alt=""/>
+            <column class="col-sm-3" id="itemContainer">
+                <img src="/Content/Images/UserPhotos/@item.ItemPhoto" class="img-thumbnail" alt="" id="itemPhotoDisplay"/>               
+                <a href="@Url.Action("Edit", "Admin", new {id = item.Id})" id="itemActions">
+                    Edit |
+                </a>                
+                <a href="#" id="itemActions">Delete</a>
+                <div class="content" id="itemContent">
+                    <h3>@item.Name</h3> 
+                    <h4>@item.Price</h4>
+                    <p>@item.Description</p>
                 </div>
-
-            </div>
+            </column>
         }
     </div>
-</div>
+
 

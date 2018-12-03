@@ -1,9 +1,9 @@
 ﻿@model PeddleRealmWebApp.ViewModels.ItemViewModel
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = @Model.Heading;
 }
 
-<h2>Create new item for sell.</h2>
+<h2>@Model.Heading</h2>
 
 @using (Html.BeginForm("Create", "Admin", FormMethod.Post, new {enctype = "multipart/form-data"}))
 {

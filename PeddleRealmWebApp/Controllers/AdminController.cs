@@ -28,9 +28,24 @@ namespace PeddleRealmWebApp.Controllers
         {
             var viewModel = new ItemViewModel
             {
-                ItemTypes = _context.ItemTypes.ToList()
+                ItemTypes = _context.ItemTypes.ToList(),
+                Heading = "Add item for sell."
             };
-            return View(viewModel);
+            return View("ItemForm", viewModel);
+        }
+        public ActionResult Edit(int id)
+        {
+            var item = _context.Items.SingleOrDefault(i => i.Id == id);
+            var viewModel = new ItemViewModel
+            {
+                ItemTypes = _context.ItemTypes.ToList(),
+                Description = item.Description,
+                ItemType = item.ItemType.Id,
+                Name = item.Name,
+                Price = item.Price,
+                Heading = "Edit item for sell."
+            };
+            return View("ItemForm", viewModel);
         }
 
         [HttpPost]
