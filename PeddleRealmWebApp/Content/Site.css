@@ -1,9 +1,10 @@
 ﻿
 
 body {
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 20px;
     background-color: #363232;
+    color: #d5c9c9;
 }
 *, :after, :before {
 
@@ -63,18 +64,20 @@ body {
     font-weight: 900;
     color: #d7f2f9;
 }
+#itemCardBody {
+    color: black;
+}
+#itemCardImage {
+    vertical-align: middle;
+    object-fit: contain;
+}
 #itemContainer {
     border: 1px solid lightgray;
     -ms-border-radius: 15px;
     border-radius: 15px;
     background-color: aliceblue;
 }
-#itemContainer > #itemActions {
-    display: none
-}
-#itemContainer:hover #itemActions {
-    display: contents;
-}
+
 #itemContent {
     background-color: mintcream;
     border-radius: 5px;

@@ -3,29 +3,26 @@
     ViewBag.Title = "Index";
 }
 <meta content="width-device-width, initial-scale=1"/>
-<header>
-    <h2>Welcome Admin.</h2>
 
-</header>
-
+<h2>Welcome Admin.</h2>
 @Html.ActionLink("Add new item for sale.", "Create")
 
     <div class="row" id="itemRow">
         @foreach (var item in Model)
         {
-
-            <column class="col-sm-3" id="itemContainer">
-                <img src="/Content/Images/UserPhotos/@item.ItemPhoto" class="img-thumbnail" alt="" id="itemPhotoDisplay"/>               
-                <a href="@Url.Action("Edit", "Admin", new {id = item.Id})" id="itemActions">
-                    Edit |
-                </a>                
-                <a href="#" id="itemActions">Delete</a>
-                <div class="content" id="itemContent">
-                    <h3>@item.Name</h3> 
-                    <h4>@item.Price</h4>
-                    <p>@item.Description</p>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/Content/Images/UserPhotos/@item.ItemPhoto" alt="Card image cap" height="100px" width="100px">
+                <div class="card-body" id="itemCardBody">
+                    <div class="card-text">
+                        <h4>@item.Name</h4>
+                        <h5>@item.Price</h5>
+                    </div>
+                    <div class="card-text">
+                        <p>@item.Description</p>
+                    </div>
+                    <a href="#" class="btn btn-primary" id="itemCardButton">View Details</a>
                 </div>
-            </column>
+            </div>
         }
     </div>
 
