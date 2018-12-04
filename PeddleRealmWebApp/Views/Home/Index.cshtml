@@ -54,9 +54,15 @@
                             <h4>@item.Name</h4>
                             <h5>@item.Price</h5>                        
                             <p>@item.Description</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="@Url.Action("Details", "Admin", new {id = item.Id})" class="btn btn-primary" id="itemCardButton">View Details</a>
+                            <div class="container">
+                                <a href="@Url.Action("Details", "Items", new {id = item.Id})" class="btn btn-primary" id="itemCardButton">View Details</a>
+
+                                @if (!User.IsInRole("Admin") && User.Identity.IsAuthenticated)
+                                {                               
+                                    <a href="#" class="btn btn-primary" id="AddToCartButton">Add to Cart</a>                                                        
+                                }
                             </div>
+                           
                             
                         </div>
                     </div>

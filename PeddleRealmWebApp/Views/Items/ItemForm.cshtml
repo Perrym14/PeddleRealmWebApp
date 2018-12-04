@@ -5,33 +5,42 @@
 
 <h2>@Model.Heading</h2>
 
-@using (Html.BeginForm("Create", "Admin", FormMethod.Post, new {enctype = "multipart/form-data"}))
+@using (Html.BeginForm("Create", "Items", FormMethod.Post, new {enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
         @Html.TextBoxFor(m => m.Name, new {@class= "form-control", placeholder="Spaghetti"})
+        @Html.ValidationMessageFor(m=> m.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Price)
         @Html.TextBoxFor(m => m.Price, new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Price)
         
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.ItemType)
         @Html.DropDownListFor(m => m.ItemType, new SelectList(Model.ItemTypes, "Id", "Name"), "", new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.ItemType)
     </div>
 
     <div class="form-group">
        @Html.LabelFor(m=> m.Description)
         @Html.TextAreaFor(m => m.Description, new {@class="form-control"})
+        @Html.ValidationMessageFor(m => m.Description)
     </div>
 
+    <!-- Remember to validate file type and size-->
     <div class="form-group">
         @Html.LabelFor(m => m.ItemPhoto)
         <input type="file" name="uploadedFile" class="form-control-file" id="itemPhoto">
     </div>
     <button type="submit" class="btn btn-info">Save</button>
-    @Html.ActionLink("Cancel", "Index")
+    <a href="#" class="btn btn-link">Cancel</a>
 }
 
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
