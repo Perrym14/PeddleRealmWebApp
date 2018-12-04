@@ -70,6 +70,10 @@ body {
 }
 #itemCardBody {
     color: black;
+    border: 1px solid;
+    padding: 1.25rem;
+    border-radius: 4px;
+    flex: 1 1 auto;
 }
 #itemCardImage {
     vertical-align: middle;
