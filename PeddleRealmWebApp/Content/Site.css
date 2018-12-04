@@ -68,6 +68,9 @@ body {
     font-weight: 900;
     color: #d7f2f9;
 }
+#addNewItem {
+    display: block;
+}
 #itemCardBody {
     color: black;
     border: 1px solid;
