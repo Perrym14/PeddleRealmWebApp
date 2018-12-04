@@ -17,6 +17,10 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+#itemRow {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .row,
 .row > .col-sm-4 {

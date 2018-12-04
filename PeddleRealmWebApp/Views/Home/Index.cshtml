@@ -1,44 +1,72 @@
 ﻿
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators-->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <!-- Inside carousel-->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="/Content/Images/Homepage/UnchartedBG.jpg" height="300" width="300" alt="First slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>PeddleRealm</h5>
-                    <p>An uncharted world of items.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="/Content/Images/Homepage/piotr-krezelewski-diego.jpg" height="300" width="300" alt="Second slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Be fashionably unique</h5>
-                    <p>Clothes you can only get here.</p>
-                    </div>
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="/Content/Images/Homepage/Feast.jpg" height="300" width="300" alt="Third slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Food fit for a banquet</h5>
-                    <p>Food of kings</p>
-                    </div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators-->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Inside carousel-->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="/Content/Images/Homepage/UnchartedBG.jpg" height="300" width="300" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>PeddleRealm</h5>
+                <p>An uncharted world of items.</p>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="/Content/Images/Homepage/piotr-krezelewski-diego.jpg" height="300" width="300" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Be fashionably unique</h5>
+                <p>Clothes you can only get here.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="/Content/Images/Homepage/Feast.jpg" height="300" width="300" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Food fit for a banquet</h5>
+                <p>Food of kings</p>
+            </div>
+        </div>
     </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<hr/>
+<h2 style="text-align: center">Items for sell</h2>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row" id="itemRow">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="/Content/Images/UserPhotos/@item.ItemPhoto" alt="Card image cap" height="100px" width="100px">
+                        <div class="card-body" id="itemCardBody">
+                            <div class="card-text">
+                                <h4>@item.Name</h4>
+                                <h5>@item.Price</h5>
+                            </div>
+                            <div class="card-text">
+                                <p>@item.Description</p>
+                            </div>
+                            <a href="@Url.Action("Details", "Admin", new {id = item.Id})" class="btn btn-primary" id="itemCardButton">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>          
+    </div>
+
+</div>
     <script>
         $(function() {
             Holder.addTheme("thumb", {

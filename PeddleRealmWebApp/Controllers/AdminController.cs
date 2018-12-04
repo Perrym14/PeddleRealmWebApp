@@ -33,7 +33,7 @@ namespace PeddleRealmWebApp.Controllers
             };
             return View("ItemForm", viewModel);
         }
-        public ActionResult Edit(int id)
+        public ActionResult Details(int id)
         {
             var item = _context.Items.SingleOrDefault(i => i.Id == id);
             var viewModel = new ItemViewModel

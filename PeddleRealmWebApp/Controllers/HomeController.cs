@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PeddleRealmWebApp.Models;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PeddleRealmWebApp.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext _context;
+        public HomeController()
+        {
+            _context = new ApplicationDbContext();
+        }
         public ActionResult Index()
         {
-            return View();
+            var item = _context.Items.ToList();
+            return View(item);
         }
 
         public ActionResult About()
