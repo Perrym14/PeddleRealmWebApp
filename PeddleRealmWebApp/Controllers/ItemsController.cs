@@ -26,7 +26,24 @@ namespace PeddleRealmWebApp.Controllers
             };
             return View("ItemForm", viewModel);
         }
+        public ActionResult Edit(int id)
+        {
+            var item = _context.Items.SingleOrDefault(i => i.Id == id);
 
+            var viewModel = new ItemViewModel
+            {
+                Id = item.Id,
+                ItemTypes = _context.ItemTypes.ToList(),
+                Heading = "Add item for sell.",
+                Description = item.Description,
+                Name = item.Name,
+                ItemType = item.ItemType.Id,
+                Price = item.Price
+            };
+            return View("ItemForm", viewModel);
+        }
+
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ItemViewModel viewModel, HttpPostedFileBase uploadedFile)
@@ -39,13 +56,11 @@ namespace PeddleRealmWebApp.Controllers
 
             {
                 var fileName = UploadPhoto(uploadedFile);
-                var itemType = _context.ItemTypes.SingleOrDefault(i => i.Id == viewModel.ItemType);
-
                 var item = new Item
                 {
                     Name = viewModel.Name,
                     Description = viewModel.Description,
-                    ItemType = itemType,
+                    ItemTypeId = viewModel.ItemType,
                     Price = viewModel.Price,
                     ItemPhoto = fileName
 
@@ -55,6 +70,28 @@ namespace PeddleRealmWebApp.Controllers
                 _context.Items.Add(item);
                 _context.SaveChanges();
             }
+
+            return RedirectToAction("Index", "Admin");
+        }
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(ItemViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                viewModel.ItemTypes = _context.ItemTypes.ToList();
+                return View("ItemForm", viewModel);
+            }
+
+            var item = _context.Items.SingleOrDefault(i => i.Id == viewModel.Id);
+            item.Name = viewModel.Name;
+            item.Description = viewModel.Description;
+            item.ItemTypeId = viewModel.ItemType;
+            item.Price = viewModel.Price;
+            item.ItemPhoto = item.ItemPhoto;
+            _context.SaveChanges();
+
 
             return RedirectToAction("Index", "Admin");
         }

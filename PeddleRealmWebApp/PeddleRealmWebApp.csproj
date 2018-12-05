@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201811282026180_PopulateItemTypes.Designer.cs">
       <DependentUpon>201811282026180_PopulateItemTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812052039015_AddForeignKeyToItem.cs" />
+    <Compile Include="Migrations\201812052039015_AddForeignKeyToItem.Designer.cs">
+      <DependentUpon>201812052039015_AddForeignKeyToItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -328,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811282026180_PopulateItemTypes.resx">
       <DependentUpon>201811282026180_PopulateItemTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812052039015_AddForeignKeyToItem.resx">
+      <DependentUpon>201812052039015_AddForeignKeyToItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

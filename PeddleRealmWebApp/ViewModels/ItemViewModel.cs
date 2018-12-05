@@ -7,6 +7,8 @@ namespace PeddleRealmWebApp.ViewModels
 {
     public class ItemViewModel
     {
+        public int Id { get; set; }
+
         [Required]
         public string Name { get; set; }
 
@@ -20,11 +22,15 @@ namespace PeddleRealmWebApp.ViewModels
 
         [Required]
         public string Description { get; set; }
-        [Required]
+
         [DataType(DataType.Upload)]
         public HttpPostedFileBase ItemPhoto { get; set; }
 
         public string Heading { get; set; }
 
+        public string Action
+        {
+            get { return (Id != 0) ? "Update" : "Create"; }
+        }
     }
 }

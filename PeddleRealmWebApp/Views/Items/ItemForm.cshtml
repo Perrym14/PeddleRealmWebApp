@@ -5,9 +5,10 @@
 
 <h2>@Model.Heading</h2>
 
-@using (Html.BeginForm("Create", "Items", FormMethod.Post, new {enctype = "multipart/form-data"}))
+@using (Html.BeginForm(Model.Action, "Items", FormMethod.Post, new {enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
         @Html.TextBoxFor(m => m.Name, new {@class= "form-control", placeholder="Spaghetti"})
@@ -32,10 +33,14 @@
     </div>
 
     <!-- Remember to validate file type and size-->
-    <div class="form-group">
-        @Html.LabelFor(m => m.ItemPhoto)
-        <input type="file" name="uploadedFile" class="form-control-file" id="itemPhoto">
-    </div>
+    if (Model.Action == "Create")
+    {
+        <div class="form-group" id="uploadImage">
+            @Html.LabelFor(m => m.ItemPhoto)
+            <input type="file" name="uploadedFile" class="form-control-file" id="itemPhoto">
+        </div>   
+    }
+   
     <button type="submit" class="btn btn-info">Save</button>
     <a href="#" class="btn btn-link">Cancel</a>
 }

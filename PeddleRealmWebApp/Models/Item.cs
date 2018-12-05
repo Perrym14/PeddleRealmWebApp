@@ -10,8 +10,10 @@ namespace PeddleRealmWebApp.Models
         [StringLength(100)]
         public string Name { get; set; }
 
-        [Required]
         public ItemType ItemType { get; set; }
+
+        [Required]
+        public byte ItemTypeId { get; set; }
 
         [Required]
         public decimal Price { get; set; }
