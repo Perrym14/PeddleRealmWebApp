@@ -36,23 +36,28 @@
         <main class="col-md-5 ml-sm-auto col-lg-10 px-4" role="main">
             <h2>Welcome Admin.</h2>
             <p id="addNewItem">@Html.ActionLink("Add new item for sale.", "Create","Items")</p>
-            @foreach (var item in Model)
-            {
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="/Content/Images/UserPhotos/@item.ItemPhoto" alt="Card image cap" height="225px" width="100%" display="block">
-                        <div class="card-body" id="itemCardBody">
-                            <h4>@item.Name</h4>
-                            <h5>@item.Price</h5>                        
-                            <p>@item.Description</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="@Url.Action("Details","Items",new {id = item.Id})" class="btn btn-primary" id="itemCardButton">View Details</a>
-                            </div>
+            <div class="container">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <img class="card-img-top" src="/Content/Images/UserPhotos/@item.ItemPhoto" alt="Card image cap" height="225px" width="100%" display="block">
+                                <div class="card-body" id="itemCardBody">
+                                    <h4>@item.Name</h4>
+                                    <h5>@item.Price</h5>                        
+                                    <p>@item.Description</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="@Url.Action("Details","Items",new {id = item.Id})" class="btn btn-primary" id="itemCardButton">View Details</a>
+                                    </div>
                             
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    }
+
                 </div>
-            }
+            </div>
         </main>
     </div>
 </div>
