@@ -10,6 +10,8 @@ namespace PeddleRealmWebApp.Models
         [StringLength(100)]
         public string Name { get; set; }
 
+        public bool IsDeleted { get; set; }
+
         public ItemType ItemType { get; set; }
 
         [Required]

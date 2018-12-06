@@ -13,7 +13,7 @@ namespace PeddleRealmWebApp.Controllers
         }
         public ActionResult Index()
         {
-            var item = _context.Items.ToList();
+            var item = _context.Items.Where(i => !i.IsDeleted).ToList();
             return View(item);
         }
 

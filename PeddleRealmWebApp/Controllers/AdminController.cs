@@ -1,4 +1,5 @@
 ﻿using PeddleRealmWebApp.Models;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace PeddleRealmWebApp.Controllers
@@ -15,7 +16,7 @@ namespace PeddleRealmWebApp.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            var itemsForSale = _context.Items;
+            var itemsForSale = _context.Items.Where(i => !i.IsDeleted).ToList();
             return View(itemsForSale);
         }
 

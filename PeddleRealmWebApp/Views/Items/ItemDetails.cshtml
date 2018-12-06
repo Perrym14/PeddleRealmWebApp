@@ -15,10 +15,35 @@
         @if (User.IsInRole("Admin"))
         {
             <a href="@Url.Action("Edit","Items", new {id = @Model.Id})" class="btn btn-info">Edit</a>
-            <a href="#" class="btn btn-link">Delete</a>
-            
-            
+            <a href="#" class="js-cancel-item" data-item-id="@Model.Id">
+                Delete
+            </a>                       
         }
     </div>
 </div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $(".js-cancel-item").click(function (e) {
+                var link = $(e.target);
+
+                if (confirm("Are you sure you want to delete this item?")) {
+                    $.ajax({
+                            url: "/api/item/" + link.attr("data-item-id"),
+                            method: "DELETE"
+                        })
+                        .done(function() {
+                            link.parents("div").fadeOut(function() {
+                                $(this).remove();
+                            });
+                        })
+                        .fail(function() {
+                            alert("Something failed!");
+                        });
+                }
+            });
+        });
+    </script>
+}
 
