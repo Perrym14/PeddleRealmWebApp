@@ -237,7 +237,14 @@
     <Compile Include="Migrations\201812052234083_AddIsDeletedToItem.Designer.cs">
       <DependentUpon>201812052234083_AddIsDeletedToItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812070111343_AddCartAndOrderAndOrderDetail.cs" />
+    <Compile Include="Migrations\201812070111343_AddCartAndOrderAndOrderDetail.Designer.cs">
+      <DependentUpon>201812070111343_AddCartAndOrderAndOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -353,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812052234083_AddIsDeletedToItem.resx">
       <DependentUpon>201812052234083_AddIsDeletedToItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812070111343_AddCartAndOrderAndOrderDetail.resx">
+      <DependentUpon>201812070111343_AddCartAndOrderAndOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

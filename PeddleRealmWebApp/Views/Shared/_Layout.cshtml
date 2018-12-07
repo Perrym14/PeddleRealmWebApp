@@ -24,12 +24,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                    <a href="../Home/Index"><i class="fas fa-home">Home</i></a>
+                    <a href="~/Home/Index"><i class="fas fa-home">Home</i></a>
                     </li>
                     @if (User.IsInRole("Admin"))
                     {
                         <li>
-                        <a href="../Admin/Index"><i class="fas fa-user-tie">Admin</i></a>
+                        <a href="~/Admin/Index"><i class="fas fa-user-tie">Admin</i></a>
                         </li>
                     }
                 </ul>
