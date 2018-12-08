@@ -19,6 +19,11 @@
                 Delete
             </a>                       
         }
+            
+            <p class="button">
+                @Html.ActionLink("Add To Cart", "AddToCart", "ShoppingCart", new { id = Model.Id }, "")
+            </p>
+        
     </div>
 </div>
 @section scripts

@@ -1,0 +1,77 @@
+﻿@model PeddleRealmWebApp.ViewModels.ShoppingCartViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>
+    <em>Review</em> your cart:
+</h2>
+<p class="button">
+    @Html.ActionLink("Checkout","AddressAndPayMent", "Checkout")
+</p>
+<div id="update-message"></div>
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th scope="col">Item Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.CartItems)
+    {
+        <tr id="row-@item.RecordId">
+            <td>
+                @Html.ActionLink(item.Item.Name,"Details","Items", new{id = item.ItemId}, null)
+            </td>
+            <td>
+                @item.Item.Price
+            </td>
+            <td id="item-count-@item.RecordId">
+                @item.Count
+            </td>
+            <td>
+                <a href="#" class="RemoveLink" data-id="@item.RecordId">Remove from cart</a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td>Total</td>
+        <td></td>
+        <td></td>
+        <td id="cart-total">
+            @Model.CartTotal
+        </td>
+    </tr>
+    </tbody>   
+</table>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $(".RemoveLink").click(function(e) {
+                var recordToDelete = $(this).attr("data-id");
+                if (recordToDelete != '') {
+                    $.post("/ShoppingCart/RemoveFromCart",
+                        { "id": recordToDelete },
+                        function(data) {
+                            //Successful requests get here
+                            //Update page elements
+                            if (data.ItemCount == 0) {
+                                $('#row-' + data.DeleteId).fadeOut('slow');
+                            } else {
+                                $('#item-count-' + data.DeleteId).text(data.ItemCount);
+                            }
+                            $('#cart-total').text(data.CartTotal);
+                            $('#update-message').text(data.Message);
+                            $('#cart-status').text('Cart (' + data.CartCount + ')');
+                        });
+                }
+            });
+
+        })
+    </script>
+}
+
+

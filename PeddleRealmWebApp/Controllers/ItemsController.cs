@@ -17,6 +17,12 @@ namespace PeddleRealmWebApp.Controllers
             _context = new ApplicationDbContext();
         }
 
+        public ActionResult Index()
+        {
+            var viewModel = _context.Items.ToList();
+            return View(viewModel);
+        }
+
         public ActionResult Create()
         {
             var viewModel = new ItemViewModel

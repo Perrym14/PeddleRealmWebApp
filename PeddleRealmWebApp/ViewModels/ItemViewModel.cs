@@ -28,6 +28,7 @@ namespace PeddleRealmWebApp.ViewModels
 
         public string Heading { get; set; }
 
+        //Refactor to function expressions later.
         public string Action
         {
             get { return (Id != 0) ? "Update" : "Create"; }
