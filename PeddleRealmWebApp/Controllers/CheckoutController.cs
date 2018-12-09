@@ -65,7 +65,7 @@ namespace PeddleRealmWebApp.Controllers
 
             if (isValid)
             {
-                return View(id);
+                return View("Complete", id);
             }
             else
             {

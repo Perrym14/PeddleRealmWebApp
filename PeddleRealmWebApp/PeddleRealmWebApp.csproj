@@ -243,6 +243,10 @@
     <Compile Include="Migrations\201812070111343_AddCartAndOrderAndOrderDetail.Designer.cs">
       <DependentUpon>201812070111343_AddCartAndOrderAndOrderDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812092211243_EditOrder.cs" />
+    <Compile Include="Migrations\201812092211243_EditOrder.Designer.cs">
+      <DependentUpon>201812092211243_EditOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Order.cs" />
@@ -338,10 +342,11 @@
     <Content Include="Views\Items\ItemDetails.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
+    <Content Include="Views\Checkout\Complete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Images\UserPhotos\" />
-    <Folder Include="Views\Checkout\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -371,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812070111343_AddCartAndOrderAndOrderDetail.resx">
       <DependentUpon>201812070111343_AddCartAndOrderAndOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812092211243_EditOrder.resx">
+      <DependentUpon>201812092211243_EditOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
