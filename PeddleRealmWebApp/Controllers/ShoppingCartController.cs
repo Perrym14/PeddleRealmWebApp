@@ -51,7 +51,7 @@ namespace PeddleRealmWebApp.Controllers
             var results = new ShoppingCartRemoveViewModel
             {
                 Message = Server.HtmlEncode(itemName) +
-                          "has been removed from your shopping cart.",
+                          " has been removed from your shopping cart.",
                 CartTotal = cart.GetTotal(),
                 CartCount = cart.GetCount(),
                 ItemCount = itemCount,
