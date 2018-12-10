@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeddleRealmWebApp", "PeddleRealmWebApp\PeddleRealmWebApp.csproj", "{DA12E220-68BE-454C-8B21-F17F1AF29CFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeddleRealmWebApp.Tests", "PeddleRealmWebApp.Tests\PeddleRealmWebApp.Tests.csproj", "{8B1E22E6-CDB1-494B-8410-24790D1A7542}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeddleRealm.IntegrationTests", "PeddleRealm.IntegrationTests\PeddleRealm.IntegrationTests.csproj", "{6C2DF7D0-9472-474D-A095-91D73B415FEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{DA12E220-68BE-454C-8B21-F17F1AF29CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA12E220-68BE-454C-8B21-F17F1AF29CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA12E220-68BE-454C-8B21-F17F1AF29CFE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B1E22E6-CDB1-494B-8410-24790D1A7542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B1E22E6-CDB1-494B-8410-24790D1A7542}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B1E22E6-CDB1-494B-8410-24790D1A7542}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B1E22E6-CDB1-494B-8410-24790D1A7542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C2DF7D0-9472-474D-A095-91D73B415FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C2DF7D0-9472-474D-A095-91D73B415FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C2DF7D0-9472-474D-A095-91D73B415FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C2DF7D0-9472-474D-A095-91D73B415FEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
