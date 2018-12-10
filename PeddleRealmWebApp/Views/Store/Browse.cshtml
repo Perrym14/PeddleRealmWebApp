@@ -1,0 +1,37 @@
+﻿@model PeddleRealmWebApp.Models.ItemType
+@{
+    ViewBag.Title = "Browse Items";
+}
+
+<div class="sidebar">
+    @{ Html.RenderAction("ItemTypeMenu", "Store"); }
+</div>
+<div class="itemType">
+    <h3> Browsing: <em>@Model.Name</em> Items</h3>
+    
+<div class="album py-5 bg-light">
+<div class="container">
+    <div class="row" id="itemRow">
+        @foreach (var item in Model.Items)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" src="/Content/Images/UserPhotos/@item.ItemPhoto" alt="Card image cap" height="225px" width="100%" display="block">
+                    <div class="card-body" id="itemCardBody">
+                        <h4>@item.Name</h4>
+                        <h5>@item.Price</h5>
+                        <p>@item.Description</p>
+                        <div class="container">
+                            <a href="@Url.Action("Details", "Items", new {id = item.Id})" class="btn btn-primary" id="itemCardButton">View Details</a>    
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+    </div>
+    </div>
+</div>
+

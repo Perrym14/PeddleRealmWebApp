@@ -1,0 +1,9 @@
+﻿@model IEnumerable<PeddleRealmWebApp.Models.ItemType>
+<ul id="categories">
+    @foreach (var itemType in Model)
+    {
+        <li>
+            @Html.ActionLink(itemType.Name, "Browse", "Store", new {ItemType = itemType.Name}, null)
+        </li>
+    }
+</ul>

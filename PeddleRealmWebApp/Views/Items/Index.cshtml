@@ -1,9 +1,13 @@
-﻿@model IEnumerable<PeddleRealmWebApp.Models.Item>
+﻿@using PeddleRealmWebApp.Models
+@model IEnumerable<PeddleRealmWebApp.Models.Item>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2 style="text-align: center">Items for sell</h2>
+<div class="sidebar">
+    @{ Html.RenderAction("ItemTypeMenu", "Store"); }
+</div>
 <div class="album py-5 bg-light">
     <div class="container">
         <div class="row" id="itemRow">

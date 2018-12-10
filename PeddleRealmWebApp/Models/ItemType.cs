@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PeddleRealmWebApp.Models
 {
@@ -8,5 +9,7 @@ namespace PeddleRealmWebApp.Models
 
         [Required]
         public string Name { get; set; }
+
+        public List<Item> Items { get; set; }
     }
 }
