@@ -5,7 +5,7 @@
 
 <h2>@Model.Heading</h2>
 
-@using (Html.BeginForm(Model.Action, "Items", FormMethod.Post, new {enctype = "multipart/form-data"}))
+@using (Html.BeginForm(Model.Action, "Admin", FormMethod.Post, new {enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(m => m.Id)

@@ -339,7 +339,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Items\ItemForm.cshtml" />
+    <Content Include="Views\Admin\ItemForm.cshtml" />
     <Content Include="Views\Items\ItemDetails.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
