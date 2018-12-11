@@ -17,12 +17,6 @@ namespace PeddleRealmWebApp.Controllers
             _context = new ApplicationDbContext();
         }
 
-        public ActionResult Index()
-        {
-            var viewModel = _context.Items.ToList();
-            return View(viewModel);
-        }
-
         public ActionResult Create()
         {
             var viewModel = new ItemViewModel
@@ -102,7 +96,7 @@ namespace PeddleRealmWebApp.Controllers
             return RedirectToAction("Index", "Admin");
         }
 
-        public string UploadPhoto(HttpPostedFileBase file)
+        private string UploadPhoto(HttpPostedFileBase file)
         {
             if (file != null && file.ContentLength > 0)
             {

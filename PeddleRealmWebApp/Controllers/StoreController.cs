@@ -12,10 +12,11 @@ namespace PeddleRealmWebApp.Controllers
         {
             _context = new ApplicationDbContext();
         }
-        // GET: Store
+
         public ActionResult Index()
         {
-            return View();
+            var viewModel = _context.Items.Where(i => !i.IsDeleted).ToList();
+            return View(viewModel);
         }
         // GET: Store/Browse?itemType=Food
         public ActionResult Browse(string itemType)

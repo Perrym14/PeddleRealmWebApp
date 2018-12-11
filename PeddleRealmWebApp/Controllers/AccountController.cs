@@ -89,7 +89,7 @@ namespace PeddleRealmWebApp.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Items");
+                        return RedirectToAction("Index", "Store");
                     }
 
                 case SignInStatus.LockedOut:

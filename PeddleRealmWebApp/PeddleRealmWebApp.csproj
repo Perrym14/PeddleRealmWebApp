@@ -342,7 +342,7 @@
     <Content Include="Views\Items\ItemForm.cshtml" />
     <Content Include="Views\Items\ItemDetails.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
-    <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
     <Content Include="Views\Checkout\Complete.cshtml" />
     <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
