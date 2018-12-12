@@ -12,7 +12,6 @@ namespace PeddleRealmWebApp.Controllers
     public class AdminController : Controller
     {
         private ApplicationDbContext _context;
-
         public AdminController()
         {
             _context = new ApplicationDbContext();
@@ -23,6 +22,8 @@ namespace PeddleRealmWebApp.Controllers
         {
             var itemsForSale = _context.Items.Where(i => !i.IsDeleted).ToList();
             return View(itemsForSale);
+
+
         }
 
         public ActionResult Create()

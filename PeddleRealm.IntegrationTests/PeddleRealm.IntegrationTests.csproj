@@ -111,7 +111,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminController\UnitTest1.cs" />
+    <Compile Include="Controllers\Admin\UnitTest1.cs" />
+    <Compile Include="Controllers\ShoppingCart\UnitTest1.cs" />
     <Compile Include="Extensions\ControllerExtensions.cs" />
     <Compile Include="GlobalSetUp.cs" />
     <Compile Include="Isolated.cs" />

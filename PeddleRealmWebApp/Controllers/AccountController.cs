@@ -72,10 +72,9 @@ namespace PeddleRealmWebApp.Controllers
                 return View(model);
             }
 
-
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
+                        // This doesn't count login failures towards account lockout
+                        // To enable password failures to trigger account lockout, change to shouldLockout: true
+                        var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -176,7 +175,7 @@ namespace PeddleRealmWebApp.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Items");
+                    return RedirectToAction("Index", "Store");
                 }
                 AddErrors(result);
             }

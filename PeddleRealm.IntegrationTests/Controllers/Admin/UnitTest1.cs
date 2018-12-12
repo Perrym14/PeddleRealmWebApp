@@ -6,7 +6,7 @@ using PeddleRealmWebApp.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PeddleRealm.IntegrationTests.AdminController
+namespace PeddleRealm.IntegrationTests.Controllers.Admin
 {
     [TestFixture]
     public class UnitTest1
@@ -14,15 +14,12 @@ namespace PeddleRealm.IntegrationTests.AdminController
         private PeddleRealmWebApp.Controllers.AdminController _controller;
         private ApplicationDbContext _context;
 
-        public UnitTest1()
-        {
-            _context = new ApplicationDbContext();
-        }
 
         [SetUp]
         public void SetUp()
         {
             _controller = new PeddleRealmWebApp.Controllers.AdminController();
+            _context = new ApplicationDbContext();
         }
 
         [TearDown]
@@ -40,16 +37,8 @@ namespace PeddleRealm.IntegrationTests.AdminController
 
             //Setting non-deleted item to add to context.
             var itemType = _context.ItemTypes.FirstOrDefault();
-            var item = new Item
-            {
-                Description = "test",
-                IsDeleted = false,
-                ItemPhoto = "-",
-                ItemType = itemType,
-                Name = "Blah",
-                Price = 19.7m
-            };
-            _context.Items.Add(item);
+            AddNewItemToContext(itemType);
+
             //Setting deleted item to add to context.
             var deletedItem = new Item
             {
@@ -70,6 +59,20 @@ namespace PeddleRealm.IntegrationTests.AdminController
             (result.ViewData.Model as IEnumerable<Item>).Should().HaveCount(1);
         }
 
+        public void AddNewItemToContext(ItemType itemType)
+        {
+            var item = new Item
+            {
+                Description = "test",
+                IsDeleted = false,
+                ItemPhoto = "-",
+                ItemType = itemType,
+                Name = "Blah",
+                Price = 19.7m
+            };
+            _context.Items.Add(item);
+        }
+
         [Test, Isolated]
         public void UpdateItem_WhenCalled_ShouldUpdateGivenItem()
         {
@@ -77,7 +80,7 @@ namespace PeddleRealm.IntegrationTests.AdminController
             var user = _context.Users.SingleOrDefault(u => u.UserName == "MarkT");
             _controller.MockCurrentUser(user.Id, user.UserName);
 
-            var itemType = _context.ItemTypes.SingleOrDefault(i => i.Id == 1);
+            var itemType = GetItemType();
             var item = new Item
             {
                 Description = "test",
@@ -107,6 +110,12 @@ namespace PeddleRealm.IntegrationTests.AdminController
             item.Name.Should().Be("new");
             item.Price.Should().Be(10.0m);
             item.ItemTypeId.Should().Be(2);
+        }
+
+        private ItemType GetItemType()
+        {
+            var itemType = _context.ItemTypes.SingleOrDefault(i => i.Id == 1);
+            return itemType;
         }
     }
 }
