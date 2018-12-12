@@ -267,6 +267,7 @@
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\Homepage\NavbarImg.jpg" />
     <Content Include="Content\Images\Homepage\Fashionable.jpg" />
     <Content Include="Content\Images\Homepage\Feast.jpg" />
     <Content Include="Content\Images\Homepage\PeddleRealmBG.png" />
@@ -276,6 +277,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Testimonies\HappyDwarf.jpg" />
+    <Content Include="Content\Images\Testimonies\image_400x400.jpg" />
+    <Content Include="Content\Images\Testimonies\stoic.jpeg" />
     <Content Include="Content\Images\UserPhotos\17b03223-3d0b-4b18-8053-bd52e3fd736fSocksOfPureDivinity.jpeg" />
     <Content Include="Content\Images\UserPhotos\1a588e3c-4b39-400d-87e8-dd0f6326ec76exps28800_UG143377D12_18_1b_RMS-696x696.jpg" />
     <Content Include="Content\Images\UserPhotos\3389bf93-0aca-4b1c-bb63-69a44b03f7e0spaghetti.jpeg" />

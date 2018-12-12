@@ -12,6 +12,10 @@ body {
     background-size: cover;
     position: relative;
 }
+.container {
+    width: 100%;
+    height: 100%;
+}
 *, :after, :before {
 
     box-sizing: border-box;
@@ -38,10 +42,6 @@ body {
     clear: both;
 }
 
-
-    /* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
     .dl-horizontal dt {
         white-space: normal;
     }
@@ -53,6 +53,17 @@ body {
     }
 
     /* Bootstrap overrides*/
+.carousel {
+    margin-bottom: 4rem;
+    top: -4rem;
+    width: 103%;
+    left: -2rem;
+    border: 2px solid black;
+}
+#transparent-col {
+    background-color: #302d2d66;
+    border-radius: 4px;
+}
 .navbar-nav {
     flex-direction: row;
 }
