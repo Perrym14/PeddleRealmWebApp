@@ -4,7 +4,13 @@ body {
     padding-top: 100px;
     padding-bottom: 20px;
     background-color: #363232;
-    color: #d5c9c9;
+    color: #f9f9f9;
+    background-image: url("Images/Homepage/PeddleRealmBG.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 *, :after, :before {
 
