@@ -10,7 +10,6 @@ PeddleRealm is a site where the site Admin can add items up for sell (also edit/
 
 ## Need To Do
 * Validate image upload. (must be jpg, jpeg, or png and file size <2mb)
-* Associate orders with userID (added security)
 * Improve checkout form
 * Optimize app performance
 
