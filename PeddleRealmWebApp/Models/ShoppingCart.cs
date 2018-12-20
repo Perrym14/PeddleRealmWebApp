@@ -123,7 +123,7 @@ namespace PeddleRealmWebApp.Models
 
         public int CreateOrder(Order order)
         {
-            decimal orderTotal = 2m;
+            decimal orderTotal = 0m;
 
             var cartItems = GetCartItems();
             //Iterate over the items in the cart,

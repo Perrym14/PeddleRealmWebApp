@@ -4,7 +4,7 @@ body {
     padding-top: 100px;
     padding-bottom: 20px;
     background-color: #363232;
-    color: #f9f9f9;
+    color: #54c510;
     background-image: url("Images/Homepage/PeddleRealmBG.png");
     background-size: 100% 100%;
     background-position: center;
@@ -64,7 +64,7 @@ body {
     border: 2px solid black;
 }
 .card {
-    background-color: #e0dddd80;
+   background-color: #2d272780;
     width: 350px;
     height: 350px;
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using PeddleRealmWebApp.Models;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -19,6 +20,7 @@ namespace PeddleRealmWebApp.Controllers
             var userId = User.Identity.GetUserId();
             var orders = _context.Orders
                 .Where(o => o.BuyerId == userId)
+                .Include(o => o.OrderDetails)
                 .ToList();
             return View(orders);
         }
