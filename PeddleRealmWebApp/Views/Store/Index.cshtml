@@ -22,7 +22,8 @@
                             <h5>@item.Price</h5>
                             <p>@item.Description</p>
                             <div class="container">
-                                <a href="@Url.Action("Details", "Items", new {id = item.Id})" class="btn btn-primary" id="itemCardButton">View Details</a>    
+                                <a href="@Url.Action("Details", "Items", new {id = item.Id})" class="btn btn-primary" id="itemCardButton">View Details</a>
+                                <a href="@Url.Action("AddToCart", "ShoppingCart", new {id = item.Id})" class="btn btn-sm">Add To Cart</a>
                             </div>
 
                         </div>

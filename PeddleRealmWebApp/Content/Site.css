@@ -4,7 +4,7 @@ body {
     padding-top: 100px;
     padding-bottom: 20px;
     background-color: #363232;
-    color: #cdd7cd;
+    color: black;
     background-image: url("Images/Homepage/PeddleRealmBG.png");
     background-size: 100% 100%;
     background-position: center;
@@ -14,7 +14,6 @@ body {
 }
 a {
     color: #f9dc05;
-    background-color: #0b0a0a33;
 }
 .container {
     width: 100%;
@@ -37,6 +36,11 @@ a {
 #itemRow {
     display: flex;
     flex-wrap: wrap;
+}
+#itemDetailColumn {
+    width: 268px;
+    background-color: #0648724d;
+    border-radius: 4px;
 }
 
 .row,
