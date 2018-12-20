@@ -1,0 +1,35 @@
+﻿@model IEnumerable<PeddleRealmWebApp.Models.Order>
+@{
+    ViewBag.Title = "Mine";
+}
+
+<h2>My Orders</h2>
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var order in Model)
+        {
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        Order placed: @order.OrderDate
+                        <br/>
+                        Total: $@order.Total
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Items:</h5>
+                        @foreach (var orderDetail in order.OrderDetails)
+                        {
+                            <p class="card-text">@orderDetail.Item.Name | Quantity: @orderDetail.Quantity | $@orderDetail.UnitPrice</p>
+                        }
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+

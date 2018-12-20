@@ -219,6 +219,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
@@ -247,6 +248,18 @@
     <Compile Include="Migrations\201812092211243_EditOrder.cs" />
     <Compile Include="Migrations\201812092211243_EditOrder.Designer.cs">
       <DependentUpon>201812092211243_EditOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812192051083_AddBuyerIdToOrders.cs" />
+    <Compile Include="Migrations\201812192051083_AddBuyerIdToOrders.Designer.cs">
+      <DependentUpon>201812192051083_AddBuyerIdToOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812192217048_AddBuyerIdToOrders1.cs" />
+    <Compile Include="Migrations\201812192217048_AddBuyerIdToOrders1.Designer.cs">
+      <DependentUpon>201812192217048_AddBuyerIdToOrders1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812192256168_AddBuyerIdToOrders2.cs" />
+    <Compile Include="Migrations\201812192256168_AddBuyerIdToOrders2.Designer.cs">
+      <DependentUpon>201812192256168_AddBuyerIdToOrders2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -360,6 +373,7 @@
     <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
     <Content Include="Views\Store\ItemTypeMenu.cshtml" />
     <Content Include="Views\Store\Browse.cshtml" />
+    <Content Include="Views\Orders\Mine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Images\UserPhotos\" />
@@ -395,6 +409,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812092211243_EditOrder.resx">
       <DependentUpon>201812092211243_EditOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812192051083_AddBuyerIdToOrders.resx">
+      <DependentUpon>201812192051083_AddBuyerIdToOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812192217048_AddBuyerIdToOrders1.resx">
+      <DependentUpon>201812192217048_AddBuyerIdToOrders1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812192256168_AddBuyerIdToOrders2.resx">
+      <DependentUpon>201812192256168_AddBuyerIdToOrders2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

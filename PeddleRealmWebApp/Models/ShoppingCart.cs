@@ -123,7 +123,7 @@ namespace PeddleRealmWebApp.Models
 
         public int CreateOrder(Order order)
         {
-            decimal orderTotal = 0;
+            decimal orderTotal = 0m;
 
             var cartItems = GetCartItems();
             //Iterate over the items in the cart,
@@ -143,8 +143,10 @@ namespace PeddleRealmWebApp.Models
                 _context.OrderDetails.Add(orderDetail);
             }
             // Set the orders total to the orderTotal count
-            order.Total = orderTotal;
+            var updateOrder = _context.Orders.SingleOrDefault(o => o.OrderId == order.OrderId);
+            updateOrder.Total = orderTotal;
             _context.SaveChanges();
+
             EmptyCart();
             //Return the OrderId as the confirmation number
             return order.OrderId;

@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<PeddleRealmWebApp.Models.ItemType>
-<ul id="categories">
+
+<!-- Change to button tabs and use JS later-->
+<ul class="tab" id="categories">
     @foreach (var itemType in Model)
     {
-        <li>
+        <li class="tablinks">
             @Html.ActionLink(itemType.Name, "Browse", "Store", new {ItemType = itemType.Name}, null)
         </li>
     }
