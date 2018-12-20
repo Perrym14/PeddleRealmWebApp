@@ -16,6 +16,9 @@ body {
     width: 100%;
     height: 100%;
 }
+.editor-field {
+    color: black;
+}
 *, :after, :before {
 
     box-sizing: border-box;
@@ -59,6 +62,11 @@ body {
     width: 103%;
     left: -2rem;
     border: 2px solid black;
+}
+.card {
+    background-color: #e0dddd80;
+    width: 350px;
+    height: 350px;
 }
 #fluidCarouselImg {
     max-width: 100%;
