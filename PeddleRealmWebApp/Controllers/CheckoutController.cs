@@ -1,4 +1,5 @@
-﻿using PeddleRealmWebApp.Models;
+﻿using Microsoft.AspNet.Identity;
+using PeddleRealmWebApp.Models;
 using System;
 using System.Linq;
 using System.Web.Mvc;
@@ -22,7 +23,7 @@ namespace PeddleRealmWebApp.Controllers
             return View();
         }
 
-        // POST: Checkout/AdressAndPayment
+        // POST: Checkout/AddressAndPayment
         [HttpPost]
         public ActionResult AddressAndPayment(FormCollection info)
         {
@@ -39,10 +40,12 @@ namespace PeddleRealmWebApp.Controllers
                 else
                 {
                     order.Username = User.Identity.Name;
+                    order.BuyerId = User.Identity.GetUserId();
                     order.OrderDate = DateTime.Now;
 
                     _context.Orders.Add(order);
                     _context.SaveChanges();
+
 
                     var cart = ShoppingCart.GetCart(this.HttpContext);
                     cart.CreateOrder(order);
@@ -60,8 +63,9 @@ namespace PeddleRealmWebApp.Controllers
         public ActionResult Complete(int id)
         {
             //Validate customer owns this order.
+            var userId = User.Identity.GetUserId();
             bool isValid = _context.Orders.Any(o => o.OrderId == id &&
-                                                    o.Username == User.Identity.Name);
+                                                    o.BuyerId == userId);
 
             if (isValid)
             {

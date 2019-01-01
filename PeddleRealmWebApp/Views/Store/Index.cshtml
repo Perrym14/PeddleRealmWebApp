@@ -16,13 +16,14 @@
             {
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="/Content/Images/UserPhotos/@item.ItemPhoto" alt="Card image cap" height="225px" width="100%" display="block">
+                        <img class="card-img-top" src="/Content/Images/UserPhotos/@item.ItemPhoto" alt="Card image cap" height="200px" width="250px" display="block">
                         <div class="card-body" id="itemCardBody">
                             <h4>@item.Name</h4>
                             <h5>@item.Price</h5>
                             <p>@item.Description</p>
                             <div class="container">
-                                <a href="@Url.Action("Details", "Items", new {id = item.Id})" class="btn btn-primary" id="itemCardButton">View Details</a>    
+                                <a href="@Url.Action("Details", "Items", new {id = item.Id})" class="btn btn-primary" id="itemCardButton">View Details</a>
+                                <a href="@Url.Action("AddToCart", "ShoppingCart", new {id = item.Id})" class="btn btn-sm">Add To Cart</a>
                             </div>
 
                         </div>

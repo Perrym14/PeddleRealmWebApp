@@ -9,6 +9,10 @@ namespace PeddleRealmWebApp.Models
     {
         [ScaffoldColumn(false)]
         public int OrderId { get; set; }
+
+        [ScaffoldColumn(false)]
+        public string BuyerId { get; set; }
+
         [ScaffoldColumn(false)]
         public string Username { get; set; }
 

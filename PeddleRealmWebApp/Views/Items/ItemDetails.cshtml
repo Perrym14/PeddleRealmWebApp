@@ -3,29 +3,23 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-<div class="container-fluid">
-    <div class="container">
-        <img src="/Content/Images/UserPhotos/@Model.ItemPhoto" class="img-fluid" alt="Responsive image" width="300px" height="300px"/>
-    </div>
-    <div class="container">
+    <div class="col" id="itemDetailColumn">
+        <h2>Details</h2>
+        <img src="/Content/Images/UserPhotos/@Model.ItemPhoto" class="img-fluid" alt="Responsive image" width="200px" height="200px" />
         <h4 class="title">@Model.Name</h4>
         <h5>@Model.Price</h5>
         <p>@Model.Description</p>
         @if (User.IsInRole("Admin"))
         {
-            <a href="@Url.Action("Edit","Items", new {id = @Model.Id})" class="btn btn-info">Edit</a>
+            <a href="@Url.Action("Edit", "Admin", new {id = @Model.Id})" class="btn btn-info">Edit</a>
             <a href="#" class="js-cancel-item" data-item-id="@Model.Id">
                 Delete
-            </a>                       
+            </a>
         }
-            
-            <p class="button">
-                @Html.ActionLink("Add To Cart", "AddToCart", "ShoppingCart", new { id = Model.Id }, "")
-            </p>
-        
+    <p class="button">
+        @Html.ActionLink("Add To Cart", "AddToCart", "ShoppingCart", new { id = Model.Id }, "")
+    </p>
     </div>
-</div>
 @section scripts
 {
     <script>

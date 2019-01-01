@@ -9,23 +9,29 @@
     <!-- Inside carousel-->
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="/Content/Images/Homepage/UnchartedBG.jpg" height="300px" width="100%" alt="First slide">
+            <img class="first-slide img-fluid" id="fluidCarouselImg" src="/Content/Images/Homepage/UnchartedBG.jpg" height="300px" width="100%" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>PeddleRealm</h5>
+                <h2>PeddleRealm</h2>
                 <p>An uncharted world of items.</p>
+                <p>
+                    <a class="btn btn-info" href="~/Store/Index">Explore</a>
+                </p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="/Content/Images/Homepage/piotr-krezelewski-diego.jpg" height="300" width="300" alt="Second slide">
+            <img class="d-block w-100 img-fluid" id="fluidCarouselImg" src="/Content/Images/Homepage/piotr-krezelewski-diego.jpg" height="300" width="100%" alt="Second slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Be fashionably unique</h5>
+                <h2>Be fashionably unique</h2>
                 <p>Clothes you can only get here.</p>
+                <p>
+                    <a class="btn btn-info" href="~/Account/Register">Sign Up</a>
+                </p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="/Content/Images/Homepage/Feast.jpg" height="300" width="300" alt="Third slide">
+            <img class="d-block w-100 img-fluid" id="fluidCarouselImg" src="/Content/Images/Homepage/Feast.jpg" height="300" width="100%" alt="Third slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Food fit for a banquet</h5>
+                <h3>Food fit for a banquet</h3>
                 <p>Food of kings</p>
             </div>
         </div>
@@ -39,18 +45,49 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<hr/>
 
-    <script>
-        $(function() {
-            Holder.addTheme("thumb", {
-                background: "#55595c",
-                foreground: "#eceeef",
-                text: "Thumbnail"
-            });
-            $('#myCarousel').carousel({
-                // Options
-            });
+<!--Testimony Row-->
+<div class="row">
+    <div class="col-lg-4" id="transparent-col">
+        <img class="rounded-circle" src="~/Content/Images/Testimonies/HappyDwarf.jpg" alt="Generic placeholder image" width="140" height="140" />
+        <h2>Gimar - The Lovable Party Animal</h2>
+        <p>Testimony (coming soon)</p>
+    </div>
+    <div class="col-lg-4" id="transparent-col">
+        <img class="rounded-circle" src="~/Content/Images/Testimonies/image_400x400.jpg" alt="Generic placeholder image" width="140" height="140" />
+        <h2>Zen - The Concerned Vegan</h2>
+        <p>Testimony (coming soon)</p>
+    </div>
+    <div class="col-lg-4" id="transparent-col">
+        <img class="rounded-circle" src="~/Content/Images/Testimonies/stoic.jpeg" alt="Generic placeholder image" width="140" height="140" />
+        <h2>Rick - World's Finest Food Connoisseur</h2>
+        <p>Testimony (coming soon)</p>
+    </div>
+</div>
+<hr class="featurette-divider" />
+<div class="row featurette">
+    <div class="col-md-4" id="transparent-col">
+        <h2 class="featurette-heading">
+            Featured Item Of The Day
+        </h2>
+        <p> Socks of Pure Divinity</p>
+        <img class="img-rounded img-fluid mx-auto" alt="500x500" style="width: 300px; height: 300px" src="~/Content/Images/UserPhotos/17b03223-3d0b-4b18-8053-bd52e3fd736fSocksOfPureDivinity.jpeg"/>
+
+    </div>
+
+</div>
+
+
+<script>
+    $(function () {
+        Holder.addTheme("thumb", {
+            background: "#55595c",
+            foreground: "#eceeef",
+            text: "Thumbnail"
         });
-    </script>
+        $('#myCarousel').carousel({
+            // Options
+        });
+    });
+</script>
 
