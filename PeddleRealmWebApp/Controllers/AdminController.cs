@@ -1,6 +1,7 @@
 ﻿using PeddleRealmWebApp.Models;
 using PeddleRealmWebApp.ViewModels;
 using System;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -105,6 +106,17 @@ namespace PeddleRealmWebApp.Controllers
             return RedirectToAction("Index", "Admin");
         }
 
+        public ActionResult Report()
+        {
+            var orders = _context.Orders
+                .Include(o => o.OrderDetails)
+                .OrderByDescending(o => o.OrderDate)
+                .ToList();
+
+            return View(orders);
+
+        }
+
         private string UploadPhoto(HttpPostedFileBase file)
         {
             if (file != null && file.ContentLength > 0)
@@ -129,6 +141,8 @@ namespace PeddleRealmWebApp.Controllers
 
             return "nofile.png";
         }
+
+
 
     }
 }

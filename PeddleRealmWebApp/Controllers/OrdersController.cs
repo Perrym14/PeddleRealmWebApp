@@ -14,7 +14,7 @@ namespace PeddleRealmWebApp.Controllers
         {
             _context = new ApplicationDbContext();
         }
-        // GET: Orders
+        // Get user's orders.
         public ActionResult Mine()
         {
             var userId = User.Identity.GetUserId();
