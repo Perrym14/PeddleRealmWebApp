@@ -106,7 +106,7 @@ namespace PeddleRealmWebApp.Controllers
             return RedirectToAction("Index", "Admin");
         }
 
-        public ActionResult Report()
+        public ActionResult CustomerOrders()
         {
             var orders = _context.Orders
                 .Include(o => o.OrderDetails)

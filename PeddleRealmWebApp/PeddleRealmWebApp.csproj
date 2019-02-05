@@ -374,7 +374,7 @@
     <Content Include="Views\Store\ItemTypeMenu.cshtml" />
     <Content Include="Views\Store\Browse.cshtml" />
     <Content Include="Views\Orders\Mine.cshtml" />
-    <Content Include="Views\Admin\Report.cshtml" />
+    <Content Include="Views\Admin\CustomerOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Images\UserPhotos\" />

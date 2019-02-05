@@ -22,11 +22,17 @@ namespace PeddleRealmWebApp.Controllers.Api
         {
             var item = _context.Items.SingleOrDefault(i => i.Id == id);
 
-            if (item.IsDeleted)
-                return NotFound();
+            if (item != null)
+            {
+                if (item.IsDeleted)
+                {
+                    return NotFound();
+                }
 
-            item.IsDeleted = true;
-            _context.SaveChanges();
+                item.IsDeleted = true;
+                _context.SaveChanges();
+            }
+
 
             return Ok();
         }
