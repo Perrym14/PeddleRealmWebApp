@@ -41,11 +41,10 @@ namespace PeddleRealmWebApp.Controllers
         [HttpPost]
         public ActionResult RemoveFromCart(int id)
         {
-            var cart = ShoppingCart.GetCart(this.HttpContext);
+            var cart = ShoppingCart.GetCart(HttpContext);
+            string itemName = GetItemNameFromCartByRecordId(id);
 
-            string itemName = _context.Carts.SingleOrDefault(
-                i => i.RecordId == id).Item.Name;
-
+            //Set new item count after item removal.
             int itemCount = cart.RemoveFromCart(id);
 
             var results = new ShoppingCartRemoveViewModel
@@ -59,6 +58,13 @@ namespace PeddleRealmWebApp.Controllers
             };
             return Json(results);
         }
+
+        private string GetItemNameFromCartByRecordId(int id)
+        {
+            return _context.Carts.SingleOrDefault(
+                i => i.RecordId == id).Item.Name;
+        }
+
         //Get: /ShoppingCart/CartSummary
         [ChildActionOnly]
         public ActionResult CartSummary()
