@@ -16,6 +16,7 @@ PeddleRealm is a site where the site Admin can add items up for sell (also edit/
 ## Upcoming Features
 - [ ] Add wishlist feature
 - [x] Allows users to view their orders
+- [ ] Allow users to login via 3rd-party accounts (Google, Facebook, etc.)
 - [ ] Allow users to change their account settings
 - [ ] Display best selling items on the front page
 - [ ] Add ability for items to go on sale
