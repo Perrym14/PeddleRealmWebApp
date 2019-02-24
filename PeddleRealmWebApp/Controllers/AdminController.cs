@@ -110,11 +110,13 @@ namespace PeddleRealmWebApp.Controllers
             if (file != null && file.ContentLength > 0)
             {
                 var fileName = Path.GetFileName(file.FileName);
+
+                //Add randomly generated ID to avoid duplicates.
                 var random = Guid.NewGuid() + fileName;
                 var path = Path.Combine(
                     System.Web.HttpContext.Current.Server.MapPath("~/Content/Images/UserPhotos"), random);
 
-                if (!Directory.Exists(System.Web.HttpContext.Current.Server.MapPath("~/Content/UserPhotos")))
+                if (!Directory.Exists(System.Web.HttpContext.Current.Server.MapPath("~/Content/Images/UserPhotos")))
                 {
                     Directory.CreateDirectory(
                         System.Web.HttpContext.Current.Server.MapPath("~/Content/Images/UserPhotos"));
@@ -123,7 +125,7 @@ namespace PeddleRealmWebApp.Controllers
 
 
                 //var awsS3Uploader = new AmazonS3Uploader(random, path);
-                // awsS3Uploader.UploadFile(); - Causes null exception.
+                // awsS3Uploader.UploadFile(); - Causes null exception. Fix later
                 return random;
             }
 
