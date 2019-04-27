@@ -15,6 +15,7 @@ PeddleRealm is a site where the site Admin can add items up for sell (also edit/
 - [ ] Allow admin to change item picture
 - [ ] Optimize app performance
 - [ ] Send confirmation email with order details.
+- [ ] Refactor JavaScript
   
 ## Upcoming Features
 - [ ] Add wishlist feature
